@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>FindSign</title>
+
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/img/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/img/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/img/favicons/favicon-16x16.png"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/img/favicons/favicon.ico"
+    />
+    <link rel="manifest" href="assets/img/favicons/manifest.json" />
+    <meta
+      name="msapplication-TileImage"
+      content="assets/img/favicons/android-chrome-512x512.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="vendors/prism/prism.css" rel="stylesheet" />
+    <link href="vendors/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="assets/css/theme.min.css" rel="stylesheet" />
+    <link href="assets/css/user.min.css" rel="stylesheet" />
+
+    <style>
+    .card {
+      border: none;
+      border-radius: 15px;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      background-color: #f0f9f4; /* fundo clarinho para o verde se destacar */
+      color: #003766; /* texto azul escuro */
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 20px rgba(0, 55, 102, 0.3);
+    }
+
+    .card i {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      color: #62d995; /* verde sólido */
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .card:hover i {
+      transform: scale(1.2);
+      color: #00bfff; /* azul no hover */
+    }
+
+    .card h3 {
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #003766;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #003766;
+    }
+
+    .contato-icon {
+      font-size: 2.5rem;
+      color: #fff;
+      transition: transform 0.3s, color 0.3s, text-shadow 0.3s;
+    }
+
+    .contato-icon:hover {
+      transform: translateY(-5px) scale(1.2);
+      text-shadow: 0 0 8px rgba(255,255,255,0.7);
+    }
+
+    .contato-icon.whatsapp:hover { color: #25D366; }
+    .contato-icon.email:hover { color: #0d6efd; }
+    .contato-icon.instagram:hover { color: #DD2A7B; }
+
+    /* Ajustes responsivos opcionais */
+    @media (max-width: 768px) {
+      .contato-icon {
+        font-size: 2rem;
+      }
+    }
+    </style>
+  </head>
+
+  <body>
+    
+    <main class="main" id="top">
+      <nav
+        class="navbar navbar-expand-lg fixed-top navbar-dark"
+        data-navbar-on-scroll="data-navbar-on-scroll"
+      >
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="assets/img/logos/logoFindSign1.png"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fa-solid fa-bars text-white fs-3"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Início</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="repositorio.html"
+                  >Repositório</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="sobre.html"
+                  >Sobre</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#contato"
+                  >Contato</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section class="bg-dark text-center py-9">
+        <div class="container">
+          <div class="col-12 col-md-7 mx-auto">
+            <h1 class="text-white fs-lg-7 fs-md-4 fs-3 my-4">
+              Conheça o <strong style="color: #00bfff">FindSign</strong>!
+            </h1>
+          </div>
+          <p class="w-md-50 mx-auto mb-4" style="color: #62d995; font-size: 1.05rem;">
+            Uma plataforma feita para tornar a <strong>Libras</strong> acessível a todos, reunindo conteúdos em vídeo,
+            tecnologia e inclusão em um só lugar.
+          </p>
+          <p>
+            <a href="#" id="saibaMais" style="color: #00bfff; text-decoration: underline; font-weight: bold;">Saiba Mais</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Modal do vídeo -->
+      <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md">
+          <div class="modal-content bg-dark">
+            <div class="modal-body p-0">
+              <video id="modalVideo" src="assets/videos/sobreFignSign.mp4" controls class="w-100"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="pb-4">
+        <div class="container text-center">
+          <p class="fs-1">Nosso Objetivo</p>
+          <h1 class="fs-lg-6 fs-md-4 fs-3 my-4">
+            Bem-vindo ao FindSign: a Libras acessível para todos
+          </h1>
+
+          <!-- Cards do propósito -->
+          <div class="row g-4 py-4">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <i class="fa-solid fa-universal-access fa-3x mb-3" ></i>
+                  <h3 class="card-title">Inclusão</h3>
+                  <p class="card-text">
+                    Ampliar o acesso a sinais da Libras, especialmente termos acadêmicos e técnicos de difícil tradução, para que surdos e ouvintes possam navegar pelo conhecimento de forma inclusiva e prática.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <i class="fa-solid fa-laptop-code fa-3x mb-3"></i>
+                  <h3 class="card-title">Plataforma Digital</h3>
+                  <p class="card-text">
+                    Criar um ambiente online gratuito, interativo e acessível, que centralize sinais acadêmicos e técnicos, permitindo consultas rápidas e confiáveis.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <i class="fa-solid fa-book-open fa-3x mb-3"></i>
+                  <h3 class="card-title">Educação</h3>
+                  <p class="card-text">
+                    Facilitar a compreensão de conceitos complexos da vida universitária, oferecendo sinais da área de tecnologia inicialmente e expandindo para outras áreas do conhecimento.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <i class="fa-solid fa-people-arrows fa-3x mb-3"></i>
+                  <h3 class="card-title">Acessibilidade Total</h3>
+                  <p class="card-text">
+                    Garantir compatibilidade com computadores, tablets, smartphones e tecnologias assistivas, oferecendo uma experiência inclusiva e educativa para todos os usuários.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <i class="fa-solid fa-lightbulb fa-3x mb-3"></i>
+                  <h3 class="card-title">Visão</h3>
+                  <p class="card-text">
+                    Contribuir para uma educação mais inclusiva, onde todos tenham as mesmas oportunidades de aprender e se desenvolver, independentemente de suas habilidades auditivas.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <i class="fa-solid fa-globe fa-3x mb-3"></i>
+                  <h3 class="card-title">Expansão</h3>
+                  <p class="card-text">
+                    Começamos pela área de tecnologia, mas planejamos expandir para outras áreas do conhecimento, reunindo cada vez mais sinais acadêmicos e técnicos em Libras.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      <section id="contato">
+        <div class="container bg-dark overflow-hidden rounded-1 py-4 position-relative">
+          <div class="bg-holder" style="background-image: url('assets/img/promo/promo-bg.png'); background-size: cover; background-position: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"></div>
+          <div class="px-5 position-relative text-center" style="z-index: 1;">
+            <h1 class="w-lg-75 mx-auto fs-lg-6 fs-md-4 fs-3" style="color: #62d995;">
+              Fale conosco!
+            </h1>
+            <p class="text-white mb-4" style="font-size: 1rem; line-height: 1.5;">
+              Tem alguma dúvida, sugestão ou quer simplesmente conversar com a gente? <br>
+              Entre em contato através de um dos canais abaixo, será um prazer ouvir você!
+            </p>
+            <div class="d-flex justify-content-center gap-4">
+              <a href="https://wa.me/SEUNUMERO" target="_blank" class="contato-icon whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+              <a href="mailto:seuemail@dominio.com" class="contato-icon email">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+              <a href="https://www.instagram.com/seuperfil" target="_blank" class="contato-icon instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="bg-dark text-white py-4">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+          <a href="index.html" class="mb-2 mb-md-0">
+            <img src="assets/img/logos/logoUdf.png" alt="Logo UDF" class="img-fluid" style="height: 60px;">
+          </a>
+          <div class="text-end">
+            <p class="mb-1">
+              © <span>Copyright</span> <strong class="px-1 sitename">2025</strong> 
+              <span>Todos os Direitos Reservados</span>
+            </p>
+            <div class="credits">
+            Os sinais apresentados neste site têm como fonte a
+            <a
+              href="https://www.fesai.com.br/"
+              class="text-white text-decoration-underline"
+              target="_blank"
+              >FESAI</a>
+        </div>
+      </footer>
+
+        </div>
+      </div>
+    </section>
+   
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="vendors/popper/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/anchorjs/anchor.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="vendors/lodash/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="vendors/prism/prism.js"></script>
+    <script src="vendors/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+
+    <script>
+      const saibaLink = document.getElementById('saibaMais');
+      const modalVideo = document.getElementById('modalVideo');
+      const videoModal = new bootstrap.Modal(document.getElementById('videoModal'));
+
+      saibaLink.addEventListener('click', (e) => {
+        e.preventDefault(); // evita o comportamento padrão do link
+        videoModal.show();
+        modalVideo.play(); // inicia o vídeo automaticamente
+      });
+
+      // Para pausar o vídeo quando o modal fechar
+      document.getElementById('videoModal').addEventListener('hidden.bs.modal', () => {
+        modalVideo.pause();
+        modalVideo.currentTime = 0; // reseta para o início
+      });
+    </script>
+  </body>
+</html>

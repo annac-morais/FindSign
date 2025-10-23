@@ -1,0 +1,2572 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FindSign</title>
+
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/img/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/img/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/img/favicons/favicon-16x16.png"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/img/favicons/favicon.ico"
+    />
+    <link rel="manifest" href="assets/img/favicons/manifest.json" />
+    <meta
+      name="msapplication-TileImage"
+      content="assets/img/favicons/android-chrome-512x512.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Fonts & CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="vendors/prism/prism.css" rel="stylesheet" />
+    <link href="vendors/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="assets/css/theme.min.css" rel="stylesheet" />
+    <link href="assets/css/user.min.css" rel="stylesheet" />
+
+    <style>
+      .flip-card {
+        background-color: transparent;
+        perspective: 1000px;
+        height: 200px;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+      }
+
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+      }
+
+      .flip-card-back {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-back .btn {
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark"
+      data-navbar-on-scroll="data-navbar-on-scroll"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html"
+          ><img src="assets/img/logos/logoFindSign1.png" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+        >
+          <i class="fa-solid fa-bars text-white fs-3"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="repositorio.html">Repositório</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sobre.html">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sobre.html#contato">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Repositório -->
+    <section class="py-8" id="repositorio" style="margin-top: 100px">
+      <div class="container">
+        <p class="fs-1 text-center">Tecnologia da Informação</p>
+        <h1 class="text-center fs-lg-6 fs-md-4 fs-3 mb-5">TECHSIGNS</h1>
+
+        <!-- Tabs de Categorias -->
+        <ul
+          class="nav nav-tabs justify-content-center mb-5"
+          id="categoriaTabs"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="linguagens-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#linguagens"
+              type="button"
+              role="tab"
+            >
+              Linguagens
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="conceitos-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#conceitos"
+              type="button"
+              role="tab"
+            >
+              Conceitos de Desenvolvimento
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="design-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#design"
+              type="button"
+              role="tab"
+            >
+              Design & UI/UX
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="problemas-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#problemas"
+              type="button"
+              role="tab"
+            >
+              Problemas & Práticas
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="tecnologias-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#tecnologias"
+              type="button"
+              role="tab"
+            >
+              Tecnologias & Tendências
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="plataformas-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#plataformas"
+              type="button"
+              role="tab"
+            >
+              Plataformas & Serviços
+            </button>
+          </li>
+        </ul>
+
+        <!-- Conteúdo das Tabs -->
+      <div class="tab-content" id="categoriaTabsContent">
+
+          <!-- ====================Linguagens ==================== -->
+          <div
+            class="tab-pane fade show active"
+            id="linguagens"
+            role="tabpanel"
+          >
+            <div class="row g-4 justify-content-center">
+              <!-- JavaScript -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #f0db4f">
+                      <i
+                        class="fa-brands fa-js fa-3x mb-2"
+                        style="color: #000000"
+                      ></i>
+                      <h5>JavaScript</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #f1e536">
+                      <button class="btn btn-outline-dark btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoJS">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#expJS">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Java -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #007396">
+                      <i
+                        class="fa-brands fa-java fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff">Java</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #005a7d">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoJava">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expJava">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- C# -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #ca5de6">
+                      <img src="assets/img/logos/logoCSharp.png" alt="CSharp" style="width:90px;">
+                      <h5 style="color: #fff">C#</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #8d4c96">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoCSharp">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expCSharp">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- HTML -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #e34f26">
+                      <i
+                        class="fa-brands fa-html5 fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff">HTML</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #c4371f">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoHTML">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expHTML">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CSS -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #264de4">
+                      <i
+                        class="fa-brands fa-css3-alt fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff">CSS</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #1a3db8">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoCSS">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expCSS">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ====================== MODAIS ====================== -->
+
+          <!-- JavaScript -->
+          <div class="modal fade" id="videoJS" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <div class="modal-body p-0">
+                  <video src="assets/videos/linguagens/JavaScript.mov" controls class="w-100"></video>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expJS" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color:#f0db4f; color:#000;">
+                  <h5 class="modal-title">JavaScript</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p><strong>JavaScript</strong> é uma <strong>linguagem de programação</strong> usada para adicionar interatividade e dinamismo às páginas web.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Java -->
+          <div class="modal fade" id="videoJava" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <div class="modal-body p-0">
+                  <video src="assets/videos/linguagens/Java.mov" controls class="w-100"></video>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expJava" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color:#007396; color:#fff;">
+                  <h5 class="modal-title" style="color: #fff;">Java</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p><strong>Java</strong> é uma <strong>linguagem de programação orientada a objetos</strong>, amplamente usada em aplicativos, sistemas corporativos e Android.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- C# -->
+          <div class="modal fade" id="videoCSharp" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <div class="modal-body p-0">
+                  <video src="assets/videos/linguagens/CSharp.mov" controls class="w-100"></video>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expCSharp" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color:#8d4c96; color:#fff;">
+                  <h5 class="modal-title" style="color: #fff;">C#</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p><strong>C#</strong> é uma <strong>linguagem de programação</strong> criada pela Microsoft, usada para desenvolver aplicações desktop, web e jogos.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- HTML -->
+          <div class="modal fade" id="videoHTML" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <div class="modal-body p-0">
+                  <video src="assets/videos/linguagens/HTML.mov" controls class="w-100"></video>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expHTML" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color:#e34f26; color:#fff;">
+                  <h5 class="modal-title" style="color: #fff;">HTML</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p><strong>HTML</strong> (HyperText Markup Language) é uma <strong>linguagem de marcação</strong> usada para estruturar o conteúdo das páginas da web.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CSS -->
+          <div class="modal fade" id="videoCSS" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <div class="modal-body p-0">
+                  <video src="assets/videos/linguagens/CSS.mov" controls class="w-100"></video>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expCSS" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color:#264de4; color:#fff;">
+                  <h5 class="modal-title" style="color: #fff;">CSS</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p><strong>CSS</strong> (Cascading Style Sheets) é uma <strong>linguagem de estilo</strong> usada para definir o design, cores e layout de páginas web.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== Conceitos de Desenvolvimento ==================== -->
+
+          <div class="tab-pane fade" id="conceitos" role="tabpanel">
+            <div class="row g-4 justify-content-center">
+
+              <!-- Algoritmo -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #26f7a0">
+                      <i
+                        class="fa-solid fa-lightbulb fa-3x mb-2"
+                        style="color: #000"
+                      ></i>
+                      <h5 style="color: #000;">Algoritmo</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #1cb877">
+                      <button class="btn btn-outline-dark btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoAlgoritmo">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#expAlgoritmo">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- API -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #17a2b8">
+                      <i
+                        class="fa-solid fa-plug fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff;">API</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #138496">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoAPI">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expAPI">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Backend -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #343a40">
+                      <i
+                        class="fa-solid fa-server fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff;">Backend</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #23272b">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoBackend">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expBackend">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Frontend -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #fd7e14">
+                      <i
+                        class="fa-solid fa-code fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff;">Frontend</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #e06b0f">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoFrontend">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expFrontend">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fullstack -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #aa10f2">
+                      <i
+                        class="fa-solid fa-layer-group fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff;">Fullstack</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #980dc2">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoFullstack">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expFullstack">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Código Fonte -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #114e3c">
+                      <i
+                        class="fa-solid fa-file-code fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff;">Código Fonte</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #0b3025">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoCodigoFonte">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expCodigoFonte">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- VPN -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #fd3496">
+                      <i
+                        class="fa-solid fa-shield-halved fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff;">VPN</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #e02f82">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoVPN" >
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expVPN">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Open Source -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #ffc107">
+                      <i
+                        class="fa-solid fa-code-branch fa-3x mb-2"
+                        style="color: #000"
+                      ></i>
+                      <h5>Open Source</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #e0a800">
+                      <button class="btn btn-outline-dark btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoOpenSource">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#expOpenSource">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tecnologia -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #1a6cb9">
+                      <i
+                        class="fa-solid fa-globe fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff">Tecnologia</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #2352b8">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoTecnologia">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expTecnologia">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ====================== MODAIS ====================== -->
+
+          <!-- Algoritmo -->
+          <div class="modal fade" id="videoAlgoritmo" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <video src="assets/videos/conceitos/Algoritmo.mov" controls class="w-100"></video>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expAlgoritmo" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background:#26f7a0; color:#000;">
+                  <h5 class="modal-title">Algoritmo</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    <strong>Algoritmo</strong> é um conjunto de instruções ordenadas para resolver um problema ou executar uma tarefa específica.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- API -->
+          <div class="modal fade" id="videoAPI" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <video src="assets/videos/conceitos/API.mov" controls class="w-100"></video>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expAPI" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background:#17a2b8; color:#fff;">
+                  <h5 class="modal-title" style="color: #fff;">API</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                   <strong>API</strong> (Application Programming Interface) permite que diferentes sistemas e aplicações se comuniquem entre si de forma padronizada.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="modal fade" id="videoBackend" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <video src="assets/videos/conceitos/Backend.mov" controls class="w-100"></video>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expBackend" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background:#343a40; color:#fff;">
+                  <h5 class="modal-title" style="color: #fff;">Backend</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    <strong> Backend</strong>  é a parte do sistema responsável pelo processamento, lógica de negócio e comunicação com banco de dados, invisível para o usuário.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frontend -->
+          <div class="modal fade" id="videoFrontend" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <video src="assets/videos/conceitos/Frontend.mov" controls class="w-100"></video>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expFrontend" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background:#fd7e14; color:#fff;">
+                  <h5 class="modal-title" style="color: #fff;">Frontend</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    <strong>Frontend</strong> é a parte do sistema visível ao usuário, responsável por interfaces, design e experiência do usuário.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fullstack -->
+          <div class="modal fade" id="videoFullstack" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <video src="assets/videos/conceitos/Fullstack.mov" controls class="w-100"></video>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expFullstack" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background:#aa10f2; color:#fff;">
+                  <h5 class="modal-title" style="color: #fff;">Fullstack</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    <strong>Fullstack</strong> refere-se a desenvolvedores que trabalham tanto com frontend quanto com backend, compreendendo toda a aplicação.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Código Fonte -->
+          <div class="modal fade" id="videoCodigoFonte" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <video src="assets/videos/conceitos/CodigoFonte.mov" controls class="w-100"></video>
+              </div>
+            </div>
+          </div>
+         <div class="modal fade" id="expCodigoFonte" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content">
+              <div class="modal-header" style="background:#114e3c; color:#fff;">
+                <h5 class="modal-title" style="color: #fff;">Código Fonte</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <p>
+                  <strong>Código Fonte</strong> é o conjunto de instruções escritas por programadores em linguagens de programação que definem o funcionamento de um software.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <!-- VPN -->
+          <div class="modal fade" id="videoVPN" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <video src="assets/videos/conceitos/VPN.mov" controls class="w-100"></video>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expVPN" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background:#fd3496; color:#fff;">
+                  <h5 class="modal-title" style="color: #fff;">VPN</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    <strong>VPN</strong> (Virtual Private Network) cria uma conexão segura e criptografada entre o dispositivo do usuário e a internet, protegendo dados e identidade.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Open Source -->
+          <div class="modal fade" id="videoOpenSource" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <video src="assets/videos/conceitos/OpenSource.mov" controls class="w-100"></video>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expOpenSource" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background:#ffc107; color:#000;">
+                  <h5 class="modal-title">Open Source</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    <strong>Open Source</strong> são softwares cujo código-fonte é aberto, permitindo que qualquer pessoa estude, modifique e distribua livremente.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tecnologia -->
+          <div class="modal fade" id="videoTecnologia" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <div class="modal-body p-0">
+                  <video src="assets/videos/conceitos/Tecnologia.mov" controls class="w-100"></video>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expTecnologia" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background:#1a6cb9; color:#fff;">
+                  <h5 class="modal-title" style="color: #fff;">Tecnologia</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    <strong>Tecnologia</strong> é o conjunto de conhecimentos, técnicas e ferramentas utilizadas para criar, desenvolver e aprimorar produtos, serviços e soluções digitais ou físicas.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== Design & UI/UX ==================== -->
+
+          <div class="tab-pane fade" id="design" role="tabpanel">
+            <div class="row g-4 justify-content-center">
+
+              <!-- Wireframe -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #6f42c1">
+                      <i
+                        class="fa-solid fa-border-all fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff">Wireframe</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #5936a2">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoWireframe">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expWireframe">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Design System -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #20c997">
+                      <i
+                        class="fa-solid fa-palette fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff">Design System</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #1aa179">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoDesignSystem">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expDesignSystem">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Atomic Design -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #fd7e14">
+                      <i
+                        class="fa-solid fa-cubes fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff">Atomic Design</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #e06b0f">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoAtomicDesign">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expAtomicDesign">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Style Guide -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #17a2b8">
+                      <i
+                        class="fa-solid fa-book fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff">Style Guide</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #138496">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoStyleGuide">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expStyleGuide">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Figma -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #f2cb74">
+                      <i
+                        class="fa-brands fa-figma fa-3x mb-2"
+                        style="color: #000"
+                      ></i>
+                      <h5 style="color: #000">Figma</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #e6b85c">
+                      <button class="btn btn-outline-dark btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoFigma">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#expFigma">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Acessibilidade -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #6610f2">
+                      <i
+                        class="fa-solid fa-universal-access fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff">Acessibilidade</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #520dc2">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoAcessibilidade">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expAcessibilidade">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CorelDraw -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #71da92">
+                      <img src="assets/img/logos/logoCorelDraw.png" alt="CorelDraw" style="width:90px;">
+                      <h5>CorelDraw</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #5dbd78">
+                      <button class="btn btn-outline-dark btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoCorelDraw">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#expCorelDraw">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- AutoCAD -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #947474">
+                      <img src="assets/img/logos/logoAutoCAD.png" alt="AutoCAD" style="width:80px; margin-bottom:50x;">
+                      <h5 style="color: #fff">AutoCAD</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #695050">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoAutoCAD">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expAutoCAD">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ====================== MODAIS ====================== -->
+
+          <!-- Wireframe -->
+          <div class="modal fade" id="videoWireframe" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <video src="assets/videos/design/Wireframe.mov" controls class="w-100"></video>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expWireframe" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background:#6f42c1; color:#fff;">
+                  <h5 class="modal-title" style="color: #fff;">Wireframe</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    <strong>Wireframe</strong> é uma representação visual simples da estrutura de uma interface, focando na organização e funcionalidade sem detalhes de design.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Design System -->
+          <div class="modal fade" id="videoDesignSystem" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <video src="assets/videos/design/DesignSystem.mov" controls class="w-100"></video>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expDesignSystem" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background:#20c997; color:#fff;">
+                  <h5 class="modal-title" style="color: #fff;">Design System</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    <strong>Design System</strong> é um conjunto de padrões, componentes e diretrizes de design que garante consistência e eficiência em interfaces digitais.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Atomic Design -->
+          <div class="modal fade" id="videoAtomicDesign" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <video src="assets/videos/design/AtomicDesign.mov" controls class="w-100"></video>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expAtomicDesign" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background:#fd7e14; color:#fff;">
+                  <h5 class="modal-title" style="color: #fff;">Atomic Design</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    <strong>Atomic Design</strong> é uma metodologia que divide a interface em componentes menores (átomos, moléculas, organismos), facilitando construção e manutenção.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Style Guide -->
+          <div class="modal fade" id="videoStyleGuide" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <video src="assets/videos/design/StyleGuide.mov" controls class="w-100"></video>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expStyleGuide" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background:#17a2b8; color:#fff;">
+                  <h5 class="modal-title" style="color: #fff;">Style Guide</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    <strong>Style Guide</strong> é um guia visual que define cores, tipografia, ícones e outros elementos para manter consistência em produtos digitais.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Figma -->
+          <div class="modal fade" id="videoFigma" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <video src="assets/videos/design/Figma.mov" controls class="w-100"></video>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expFigma" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background:#f2cb74; color:#000;">
+                  <h5 class="modal-title">Figma</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    <strong>Figma</strong> é uma ferramenta de design de interface e prototipagem colaborativa, utilizada para criar layouts, wireframes e protótipos interativos.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Acessibilidade -->
+          <div class="modal fade" id="videoAcessibilidade" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <video src="assets/videos/design/Acessibilidade.mov" controls class="w-100"></video>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expAcessibilidade" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background:#6610f2; color:#fff;">
+                  <h5 class="modal-title" style="color: #fff;">Acessibilidade</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    <strong>Acessibilidade</strong> garante que interfaces digitais possam ser utilizadas por todas as pessoas, incluindo pessoas com deficiências visuais, auditivas ou motoras.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CorelDraw -->
+          <div class="modal fade" id="videoCorelDraw" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <div class="modal-body p-0">
+                  <video src="assets/videos/design/CorelDraw.mov" controls class="w-100"></video>
+                </div>
+              </div>
+            </div>
+          </div>
+         <div class="modal fade" id="expCorelDraw" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-md">
+            <div class="modal-content">
+              <div class="modal-header" style="background:#71da92; color:#000;">
+                <h5 class="modal-title">CorelDraw</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <p>
+                  <strong>CorelDraw</strong> é um software de design gráfico vetorial usado para criar ilustrações, logotipos, layouts e materiais visuais profissionais.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <!-- AutoCAD -->
+          <div class="modal fade" id="videoAutoCAD" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <div class="modal-body p-0">
+                  <video src="assets/videos/design/AutoCAD.mov" controls class="w-100"></video>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expAutoCAD" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background:#947474; color:#fff;">
+                  <h5 class="modal-title" style="color: #fff;">AutoCAD</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    <strong>AutoCAD</strong> é um software de desenho técnico assistido por computador (CAD) usado para projetar plantas, peças mecânicas, engenharia e arquitetura.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== Problemas & Práticas ==================== -->
+
+          <div class="tab-pane fade" id="problemas" role="tabpanel">
+            <div class="row g-4 justify-content-center">
+
+              <!-- Bug -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #c201fd">
+                      <i
+                        class="fa-solid fa-bug fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff">Bug</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #ad11d4">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoBug">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expBug">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Codar -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #27ae60">
+                      <i
+                        class="fa-solid fa-code fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff">Codar</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #1e8449">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoCodar">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expCodar">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Hack -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #dc3545">
+                      <i
+                        class="fa-solid fa-user-secret fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff">Hack</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #b02a3b">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoHack">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expHack">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ====================== MODAIS ====================== -->
+
+          <!-- Bug  -->
+          <div class="modal fade" id="videoBug" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <div class="modal-body p-0">
+                  <video src="assets/videos/problemas/Bug.mov" controls class="w-100"></video>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expBug" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background:#c201fd; color:white;">
+                  <h5 class="modal-title" style="color: #fff;">Bug</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    <strong>Bug</strong> é um erro, falha ou comportamento inesperado em um sistema ou software que causa funcionamento incorreto ou indesejado. Geralmente é investigado com logs, testes e debugging para encontrar e corrigir a causa.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Codar -->
+          <div class="modal fade" id="videoCodar" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <div class="modal-body p-0">
+                  <video src="assets/videos/problemas/Codar.mov" controls class="w-100"></video>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="expCodar" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background:#27ae60; color:white;">
+                  <h5 class="modal-title" style="color: #fff;">Codar</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    <strong>Codar</strong> significa programar, escrever e organizar códigos em linguagens de programação para criar softwares, aplicativos e sistemas digitais.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hack -->
+          <div class="modal fade" id="videoHack" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content bg-dark">
+                <div class="modal-body p-0">
+                  <video src="assets/videos/problemas/Hack.mov" controls class="w-100"></video>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="expHack" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md">
+              <div class="modal-content">
+                <div class="modal-header" style="background:#dc3545; color:white;">
+                  <h5 class="modal-title" style="color: #fff;">Hack</h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    <strong>Hack</strong> pode significar uma solução rápida (workaround) para um problema ou, em outro contexto, exploração de vulnerabilidades. Em práticas positivas, refere-se a criatividade para resolver algo; em segurança, refere-se a atividades que exploram falhas.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- ==================== Tecnologias & Tendências ==================== -->
+          <div class="tab-pane fade" id="tecnologias" role="tabpanel">
+            <div class="row g-4 justify-content-center">
+
+              <!-- Inteligência Artificial -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #6610f2">
+                      <i
+                        class="fa-solid fa-robot fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff;">Inteligência Artificial</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #520dc2">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoIA">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expIA">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Angular -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #a71813">
+                      <i
+                        class="fa-brands fa-angular fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff;">Angular</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #880c0a">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoAngular">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expAngular">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- React -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #61dafb">
+                      <i
+                        class="fa-brands fa-react fa-3x mb-2"
+                        style="color: #000"
+                      ></i>
+                      <h5>React</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #21a1f1">
+                      <button class="btn btn-outline-dark btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoReact">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#expReact">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- MetaIA -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #fccfe7">
+                     <img src="assets/img/logos/logoMetaAI.png" alt="MetaIA" style="width:50px; margin-bottom: 10px;">
+                      <h5>MetaAI</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #e0b9cf">
+                      <button class="btn btn-outline-dark btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoMetaIA">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#expMetaIA">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ChatGPT -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #10a37f">
+                      <img src="assets/img/logos/logoChatGPT.png" alt="ChatGPT" style="width:80px; margin-bottom: 10px;">
+                      <h5>ChatGPT</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #0c7a60">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoChatGPT">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expChatGPT">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Deep Seek -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #1B4965">
+                      <img src="assets/img/logos/logoDeepSeek.png" alt="DeepSeek" style="width:60px;">
+                      <h5 style="color: #fff;">Deep Seek</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #163F55">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoDeepSeek" >
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expDeepSeek">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Streaming -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #d81818">
+                      <i
+                        class="fa-solid fa-play fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff;">Streaming</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #c21010">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoStreaming">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expStreaming">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Alexa -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #000">
+                      <i
+                        class="fa-brands fa-amazon fa-3x mb-2"
+                        style="color: #fff"
+                      ></i>
+                      <h5 style="color: #fff">Alexa</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #000">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoAlexa" >
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expAlexa">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Azure -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background:#0078D7;">
+                      <img src="assets/img/logos/logoAzure.png" alt="Azure" style="width:60px;">
+                      <h5 style="color:#fff;">Azure</h5>
+                    </div>
+                    <div class="flip-card-back" style="background:#005A9E;">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoAzure">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expAzure">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Gemini -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background: #C0C0C0">
+                      <img src="assets/img/logos/logoGemini.png" alt="Gemini" style="width:60px;">
+                      <h5>Gemini</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #A9A9A9">
+                      <button class="btn btn-outline-dark btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoGemini" >
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#expGemini">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+              
+              <!-- ====================== MODAIS ====================== -->
+
+              <!-- Inteligência Artificial -->
+              <div class="modal fade" id="videoIA" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/tecnologias/IA.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expIA" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background:#6610f2; color:white;">
+                      <h5 class="modal-title" style="color: #fff;">Inteligência Artificial</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>
+                        A <strong>Inteligência Artificial (IA)</strong> é a área da computação que cria sistemas capazes de executar tarefas que normalmente exigem inteligência humana — como reconhecer padrões, tomar decisões e aprender com experiências. Ela está presente em assistentes virtuais, carros autônomos e ferramentas de análise de dados.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- React -->
+              <div class="modal fade" id="videoReact" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/tecnologias/React.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expReact" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background:#61dafb; color:white;">
+                      <h5 class="modal-title">React</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>
+                        <strong>React</strong> é uma biblioteca JavaScript criada pelo Facebook para construir interfaces de usuário dinâmicas. Baseia-se em componentes reutilizáveis, permitindo criar sites e aplicações com melhor desempenho e manutenção simplificada.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Angular -->
+              <div class="modal fade" id="videoAngular" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/tecnologias/Angular.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expAngular" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background:#a71813; color:white;">
+                      <h5 class="modal-title" style="color: #fff;">Angular</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>
+                        <strong>Angular</strong> é um framework front-end desenvolvido pelo Google, usado para criar aplicações web dinâmicas. Ele utiliza TypeScript e oferece uma arquitetura robusta para desenvolvimento escalável.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Streaming -->
+              <div class="modal fade" id="videoStreaming" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/tecnologias/Streaming.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expStreaming" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background:#d81818; color:white;">
+                      <h5 class="modal-title" style="color: #fff;">Streaming</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>
+                        <strong>Streaming</strong> é a transmissão contínua de áudio, vídeo ou dados pela internet, sem necessidade de download. É a base de plataformas como Netflix, Spotify e Twitch.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- MetaIA -->
+              <div class="modal fade" id="videoMetaIA" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/tecnologias/MetaAI.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expMetaIA" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background:#fccfe7; color:white;">
+                      <h5 class="modal-title">MetaIA</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>
+                        <strong>MetaIA</strong> refere-se a um conceito de inteligência artificial em evolução, que aprende e melhora continuamente suas próprias capacidades. Representa uma IA que analisa e otimiza outras IAs ou sistemas, buscando desempenho e eficiência superiores.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ChatGPT -->
+              <div class="modal fade" id="videoChatGPT" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/tecnologias/ChatGPT.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expChatGPT" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background:#10b981; color:white;">
+                      <h5 class="modal-title">ChatGPT</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>
+                        <strong>ChatGPT</strong> é um modelo de linguagem baseado em IA desenvolvido pela OpenAI. Ele é capaz de compreender e gerar texto em linguagem natural, auxiliando em conversas, explicações, programação e criação de conteúdo.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- DeepSeek -->  
+              <div class="modal fade" id="videoDeepSeek" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/tecnologias/DeepSeek.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expDeepSeek" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background:#1B4965; color:white;">
+                      <h5 class="modal-title" style="color: #fff;">DeepSeek</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>
+                        <strong>DeepSeek</strong> é um modelo de IA avançado focado em raciocínio profundo, busca de informações e resolução complexa de problemas. Foi projetado para análises detalhadas e tarefas de alta precisão em aprendizado de máquina.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Azure -->
+              <div class="modal fade" id="videoAzure" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/tecnologias/azure.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expAzure" tabindex="-1" aria-labelledby="expAzureLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background-color:#0078D7; color:white;">
+                      <h5 class="modal-title" id="expAzureLabel" style="color: #fff;">Microsoft Azure</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>
+                        <strong>Microsoft Azure</strong> é uma plataforma de computação em nuvem desenvolvida pela Microsoft que fornece serviços como hospedagem, inteligência artificial, armazenamento e integração de dados. É amplamente usada por empresas e desenvolvedores para criar, implantar e gerenciar aplicativos em escala global.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Gemini -->
+              <div class="modal fade" id="videoGemini" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/tecnologias/Gemini.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expGemini" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background:#C0C0C0; color:white;">
+                      <h5 class="modal-title">Gemini</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>
+                        <strong>Gemini</strong> é a família de modelos de IA desenvolvida pelo Google DeepMind, que combina raciocínio, texto, imagem e código. É voltada para compreensão multimodal e interação mais natural entre humanos e máquinas.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Alexa -->
+              <div class="modal fade" id="videoAlexa" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/tecnologias/Alexa.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expAlexa" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background:#000; color:white;">
+                      <h5 class="modal-title" style="color: #fff;">Alexa</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>
+                       <strong>Alexa</strong> é um assistente virtual desenvolvido pela Amazon, capaz de interpretar comandos de voz, controlar dispositivos inteligentes e auxiliar em tarefas do dia a dia com inteligência artificial.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ==================== Plataforma & Serviços ==================== -->
+
+            <div class="tab-pane fade" id="plataformas" role="tabpanel">
+              <div class="row g-4 justify-content-center">
+
+              <!-- Zoom -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background:#2d8cff;">
+                        <img src="assets/img/logos/logoZoom.png" alt="Zoom" style="width:70px;">
+                      <h5 style="color:#fff;">Zoom</h5>
+                    </div>
+                    <div class="flip-card-back" style="background:#2173d1;">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoZoom">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expZoom">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- YouTube -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background:#ff0000;">
+                      <i class="fa-brands fa-youtube fa-3x mb-2" style="color:#fff;"></i>
+                      <h5 style="color:#fff;">YouTube</h5>
+                    </div>
+                    <div class="flip-card-back" style="background:#cc0000;">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoYouTube">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expYouTube">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TikTok -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background:#010101;">
+                      <i class="fa-brands fa-tiktok fa-3x mb-2" style="color:#fff;"></i>
+                      <h5 style="color:#fff;">TikTok</h5>
+                    </div>
+                    <div class="flip-card-back" style="background:#333333;">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoTikTok">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expTikTok">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Google Chrome -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background:#f0923a;">
+                      <i class="fa-brands fa-chrome fa-3x mb-2" style="color:#fff;"></i>
+                      <h5 style="color:#fff;">Google Chrome</h5>
+                    </div>
+                    <div class="flip-card-back" style="background:#d48234;">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoChrome">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expChrome">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Google Classroom -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background:#34a853;">
+                      <i class="fa-brands fa-google-play fa-3x mb-2" style="color:#fff;"></i>
+                      <h5 style="color:#fff;">Classroom</h5>
+                    </div>
+                    <div class="flip-card-back" style="background:#2c8c44;">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoClassroom">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expClassroom">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Apple -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background:#a3aaae;">
+                      <i class="fa-brands fa-apple fa-3x mb-2" style="color:#000;"></i>
+                      <h5 style="color:#000;">Apple</h5>
+                    </div>
+                    <div class="flip-card-back" style="background:#8d9296;">
+                      <button class="btn btn-outline-dark btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoApple">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#expApple">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- WhatsApp -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background:#25d366;">
+                      <i class="fa-brands fa-whatsapp fa-3x mb-2" style="color:#fff;"></i>
+                      <h5 style="color:#fff;">WhatsApp</h5>
+                    </div>
+                    <div class="flip-card-back" style="background:#1da851;">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoWhatsApp">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expWhatsApp">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Telegram -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background:#0088cc;">
+                      <i class="fa-brands fa-telegram fa-3x mb-2" style="color:#fff;"></i>
+                      <h5 style="color:#fff;">Telegram</h5>
+                    </div>
+                    <div class="flip-card-back" style="background:#006699;">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoTelegram">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expTelegram">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Amazon -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background:#ff9900;">
+                      <i class="fa-brands fa-amazon fa-3x mb-2" style="color:#000;"></i>
+                      <h5 style="color:#000;">Amazon</h5>
+                    </div>
+                    <div class="flip-card-back" style="background:#cc7a00;">
+                      <button class="btn btn-outline-dark btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoAmazon">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#expAmazon">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Microsoft -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background:#f25022;">
+                      <i class="fa-brands fa-windows fa-3x mb-2" style="color:#fff;"></i>
+                      <h5 style="color:#fff;">Microsoft</h5>
+                    </div>
+                    <div class="flip-card-back" style="background:#c4401b;">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoMicrosoft">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expMicrosoft">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Samsung -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background:#c4d2f3;">
+                        <img src="assets/img/logos/logoSamsung.png" alt="Samsung" style="width:120px; margin-bottom:10px; margin-top: 10px;">
+                      <h5 style="color:#000;">Samsung</h5>
+                    </div>
+                    <div class="flip-card-back" style="background:#99adca;">
+                      <button class="btn btn-outline-dark btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoSamsung">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#expSamsung">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Twitch -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background:#6441a5;">
+                      <i class="fa-brands fa-twitch fa-3x mb-2" style="color:#fff;"></i>
+                      <h5 style="color:#fff;">Twitch</h5>
+                    </div>
+                    <div class="flip-card-back" style="background:#4b3480;">
+                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoTwitch">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expTwitch">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Android -->
+              <div class="col-md-4 text-center">
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                    <div class="flip-card-front" style="background:#A4C639">
+                      <i class="fa-brands fa-android fa-3x mb-2" style="color: #000"></i>
+                      <h5 style="color: #000">Android</h5>
+                    </div>
+                    <div class="flip-card-back" style="background: #8AA92F">
+                      <button class="btn btn-outline-dark btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoAndroid">
+                        <i class="fa-solid fa-circle-play"></i> Vídeo
+                      </button>
+                      <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#expAndroid">
+                        <i class="fa-solid fa-circle-info"></i> Info
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+
+              <!-- ====================== MODAIS ====================== -->
+
+              <!-- Zoom -->
+              <div class="modal fade" id="videoZoom" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/plataformas/Zoom.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expZoom" tabindex="-1" aria-labelledby="expZoomLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background:#2d8cff; color:white;">
+                      <h5 class="modal-title" id="expZoomLabel" style="color: #fff;">Zoom</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p><strong>Zoom</strong> é uma plataforma de videoconferência que permite reuniões online, webinars e colaboração em equipe, sendo amplamente utilizada por empresas, escolas e profissionais.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- YouTube -->
+              <div class="modal fade" id="videoYouTube" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/plataformas/YouTube.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expYouTube" tabindex="-1" aria-labelledby="expYouTubeLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background:#ff0000; color:white;">
+                      <h5 class="modal-title" id="expYouTubeLabel" style="color: #fff;">YouTube</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p><strong>YouTube</strong> é uma plataforma de compartilhamento de vídeos online, permitindo que usuários assistam, publiquem e interajam com conteúdos audiovisuais de todo o mundo.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TikTok -->
+              <div class="modal fade" id="videoTikTok" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/plataformas/TikTok.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expTikTok" tabindex="-1" aria-labelledby="expTikTokLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background:#010101; color:white;">
+                      <h5 class="modal-title" id="expTikTokLabel" style="color: #fff;">TikTok</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p><strong>TikTok</strong> é uma plataforma de vídeos curtos que permite criar, editar e compartilhar conteúdos com efeitos, músicas e filtros, sendo muito popular entre jovens e criadores de conteúdo.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Google Chrome -->
+              <div class="modal fade" id="videoChrome" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/plataformas/Chrome.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expChrome" tabindex="-1" aria-labelledby="expChromeLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background:#f0923a; color:white;">
+                      <h5 class="modal-title" id="expChromeLabel" style="color: #fff;">Google Chrome</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p><strong>Google Chrome</strong> é um navegador web desenvolvido pelo Google, conhecido por sua velocidade, segurança e suporte a extensões que ampliam suas funcionalidades.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Google Classroom -->
+              <div class="modal fade" id="videoClassroom" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/plataformas/Classroom.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expClassroom" tabindex="-1" aria-labelledby="expClassroom" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background:#34a853; color:white;">
+                      <h5 class="modal-title" id="expClassroomLabel" style="color: #fff;">Google Classroom</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p><strong>Google Classroom</strong> é uma plataforma educacional que permite criar, distribuir e avaliar tarefas online, facilitando a comunicação entre professores e alunos de forma prática e organizada.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Apple -->
+              <div class="modal fade" id="videoApple" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/plataformas/Apple.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expApple" tabindex="-1" aria-labelledby="expAppleLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background:#a3aaae; color:black;">
+                      <h5 class="modal-title" id="expAppleLabel">Apple</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p><strong>Apple</strong> é uma empresa de tecnologia conhecida por seus produtos como iPhone, iPad, Mac e serviços digitais, destacando-se pelo design, inovação e integração de hardware e software.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- WhatsApp -->
+              <div class="modal fade" id="videoWhatsApp" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/plataformas/Whatsapp.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expWhatsApp" tabindex="-1" aria-labelledby="expWhatsAppLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background:#25d366; color:white;">
+                      <h5 class="modal-title" id="expWhatsAppLabel" style="color: #fff;">WhatsApp</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p><strong>WhatsApp</strong> é um aplicativo de mensagens instantâneas que permite enviar textos, áudios, vídeos, fotos e realizar chamadas de voz e vídeo de forma gratuita pela internet.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Telegram -->
+              <div class="modal fade" id="videoTelegram" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/plataformas/Telegram.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expTelegram" tabindex="-1" aria-labelledby="expTelegramLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background:#0088cc; color:white;">
+                      <h5 class="modal-title" id="expTelegramLabel" style="color: #fff;">Telegram</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p><strong>Telegram</strong> é um aplicativo de mensagens que oferece chats rápidos e seguros, com foco em privacidade, grupos grandes e recursos avançados como bots e canais de transmissão.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Amazon -->
+              <div class="modal fade" id="videoAmazon" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/plataformas/Amazon.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expAmazon" tabindex="-1" aria-labelledby="expAmazonLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background:#ff9900; color:black;">
+                      <h5 class="modal-title" id="expAmazonLabel">Amazon</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p><strong>Amazon</strong> é uma empresa de comércio eletrônico e serviços de nuvem, oferecendo uma ampla variedade de produtos, entregas rápidas e soluções digitais como Amazon Web Services (AWS).</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Microsoft -->
+              <div class="modal fade" id="videoMicrosoft" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/plataformas/Microsoft.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expMicrosoft" tabindex="-1" aria-labelledby="expMicrosoftLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background:#f25022; color:white;">
+                      <h5 class="modal-title" id="expMicrosoftLabel" style="color: #fff;">Microsoft</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p><strong>Microsoft</strong> é uma empresa de tecnologia que desenvolve softwares, serviços em nuvem e dispositivos, conhecida pelo Windows, Office e soluções corporativas para empresas de todos os portes.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Samsung -->
+              <div class="modal fade" id="videoSamsung" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/plataformas/Samsung.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expSamsung" tabindex="-1" aria-labelledby="expSamsungLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background:#c4d2f3; color:black;">
+                      <h5 class="modal-title" id="expSamsungLabel">Samsung</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p><strong>Samsung</strong> é uma empresa de tecnologia global que fabrica eletrônicos, smartphones, TVs e soluções de TI, sendo conhecida por inovação e diversidade de produtos.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Twitch -->
+              <div class="modal fade" id="videoTwitch" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <div class="modal-body p-0">
+                      <video src="assets/videos/plataformas/Twitch.mov" controls class="w-100"></video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expTwitch" tabindex="-1" aria-labelledby="expTwitchLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background:#6441a5; color:white;">
+                      <h5 class="modal-title" id="expTwitchLabel" style="color: #fff;">Twitch</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p><strong>Twitch</strong> é uma plataforma de streaming de vídeos ao vivo, focada em jogos, música e cultura, permitindo que criadores transmitam conteúdo em tempo real para uma comunidade global.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Android -->
+              <div class="modal fade" id="videoAndroid" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content bg-dark">
+                    <video src="assets/videos/plataformas/Android.mov" controls class="w-100"></video>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="expAndroid" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                  <div class="modal-content">
+                    <div class="modal-header" style="background: #A4C639; color:#000;">
+                      <h5 class="modal-title">Android</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>
+                        <strong>Android</strong> é um sistema operacional desenvolvido pelo Google, baseado em Linux, usado em dispositivos móveis e conhecido por sua flexibilidade e ampla compatibilidade com aplicativos.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Footers, JS e Modais -->
+    <footer class="bg-dark text-white py-4">
+      <div
+        class="container d-flex justify-content-between align-items-center flex-wrap"
+      >
+        <a href="index.html" class="mb-2 mb-md-0">
+          <img
+            src="assets/img/logos/logoUdf.png"
+            alt="Logo UDF"
+            class="img-fluid"
+            style="height: 60px"
+          />
+        </a>
+        <div class="text-end">
+          <p class="mb-1">
+            © <span>Copyright</span>
+            <strong class="px-1 sitename">2025</strong>
+            <span>Todos os Direitos Reservados</span>
+          </p>
+          <div class="credits">
+            Os sinais apresentados neste site têm como fonte a
+            <a
+              href="https://www.fesai.com.br/"
+              class="text-white text-decoration-underline"
+              target="_blank"
+              >FESAI</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="vendors/popper/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/anchorjs/anchor.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="vendors/lodash/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="vendors/prism/prism.js"></script>
+    <script src="vendors/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+
+    <script>
+      document.querySelectorAll('.modal').forEach(modal => {
+        const video = modal.querySelector('video');
+
+        if (video) {
+          // Ao abrir o modal, toca o vídeo
+          modal.addEventListener('shown.bs.modal', () => {
+            video.play();
+          });
+
+          // Ao fechar o modal, pausa e reseta o vídeo
+          modal.addEventListener('hidden.bs.modal', () => {
+            video.pause();
+            video.currentTime = 0;
+          });
+        }
+      });
+    </script>
+
+  </body>
+</html>
