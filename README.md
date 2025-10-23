@@ -39,11 +39,11 @@ A estrutura foi pensada para facilitar a navegação e tornar a experiência de 
 
 <p> -- Navegue entre as seções pelo menu ou pelo botão “Saiba mais”
 
-<img src="img/readme/indexFindSign.png" width="500" align="center"/></p>
+<img src="readme/indexFindSign.png" width="500" align="center"/></p>
 
 <p> -- Explore os cards no repositório de sinais: clique para ver o vídeo e as informações sobre cada sinal
 
-<video src="img/readme/repositorio.mp4" width="500" align="center"/></p>
+<video src="readme/repositorio.mp4" width="500" align="center"/></p>
 
 ## Como contribuir
 
