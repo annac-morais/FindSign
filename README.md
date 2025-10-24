@@ -1,8 +1,4 @@
-<span id="top"></span>
-
-<p align="center">
-  <img src="img/favicons/android-chrome-340x300.png" width="128" align="center"/>
-</p>
+## FindSign
 
 O FindSign é um repositório de sinais em Libras, inicialmente focado em termos relacionados à **tecnologia**, mas com a ideia de expandir futuramente para sinais de outros cursos e áreas de estudo.  
 O site reúne vídeos e conteúdos educativos, funcionando como uma **ferramenta de referência** para estudantes e interessados em Libras aplicada ao universo acadêmico.
@@ -20,30 +16,23 @@ O professor responsável é **Saulo Xavier**, e a proposta era criar um recurso 
 
 ## Acesse o projeto
 
-O FindSign está disponível online através do **GitHub Pages**.  
-Você pode visitar o site clicando no link abaixo:
-
-[Ver FindSign online](https://seuusuario.github.io/findsign/)
-
-## Como abrir localmente
-
 Para visualizar o projeto no seu computador:
 
 1. Clique em **“Code → Download ZIP”** no GitHub
 2. Extraia a pasta em seu computador
 3. Abra o arquivo `index.html` em qualquer navegador
 
+> [!NOTE]
+> O FindSign está disponível online através do **GitHub Pages**:  
+> [Ver FindSign online](https://seuusuario.github.io/findsign/)
+
 ## Como usar
 
 A estrutura foi pensada para facilitar a navegação e tornar a experiência de aprendizado **interativa e visual**.
 
-<p> -- Navegue entre as seções pelo menu ou pelo botão “Saiba mais”
+- Navegue entre as seções pelo menu ou pelo botão “Saiba mais”
 
-<img src="readme/indexFindSign.png" width="500" align="center"/></p>
-
-<p> -- Explore os cards no repositório de sinais: clique para ver o vídeo e as informações sobre cada sinal
-
-<video src="readme/repositorio.mp4" width="500" align="center"/></p>
+- Explore os cards no repositório de sinais: clique para ver o vídeo e as informações sobre cada sinal
 
 ## Como contribuir
 
