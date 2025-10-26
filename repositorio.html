@@ -113,10 +113,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" href="index.html">Início</a>
+              <a class="nav-link" href="index.html">Início</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="repositorio.html">Repositório</a>
+              <a class="nav-link active" href="repositorio.html">Repositório</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="sobre.html">Sobre</a>
@@ -836,7 +836,7 @@
               <div class="modal-content">
                 <div class="modal-header" style="background:#aa10f2; color:#fff;">
                   <h5 class="modal-title" style="color: #fff;">Fullstack</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  <button type="button" class="btn-close btn-close-white data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                   <p>
@@ -866,7 +866,7 @@
             <div class="modal-content">
               <div class="modal-header" style="background:#114e3c; color:#fff;">
                 <h5 class="modal-title" style="color: #fff;">Código Fonte</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <button type="button" class="btn-close btn-close-white data-bs-dismiss="modal"></button>
               </div>
               <div class="modal-body">
                 <p>
@@ -896,7 +896,7 @@
               <div class="modal-content">
                 <div class="modal-header" style="background:#fd3496; color:#fff;">
                   <h5 class="modal-title" style="color: #fff;">VPN</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                   <p>
@@ -956,7 +956,7 @@
               <div class="modal-content">
                 <div class="modal-header" style="background:#1a6cb9; color:#fff;">
                   <h5 class="modal-title" style="color: #fff;">Tecnologia</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                   <p>
@@ -1660,15 +1660,15 @@
               <div class="col-md-4 text-center">
                 <div class="flip-card">
                   <div class="flip-card-inner">
-                    <div class="flip-card-front" style="background: #10a37f">
+                    <div class="flip-card-front" style="background: #12bd92">
                       <img src="assets/img/logos/logoChatGPT.png" alt="ChatGPT" style="width:80px; margin-bottom: 10px;">
                       <h5>ChatGPT</h5>
                     </div>
-                    <div class="flip-card-back" style="background: #0c7a60">
-                      <button class="btn btn-outline-light btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoChatGPT">
+                    <div class="flip-card-back" style="background: #0aa17e">
+                      <button class="btn btn-outline-dark btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#videoChatGPT">
                         <i class="fa-solid fa-circle-play"></i> Vídeo
                       </button>
-                      <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#expChatGPT">
+                      <button class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#expChatGPT">
                         <i class="fa-solid fa-circle-info"></i> Info
                       </button>
                     </div>
@@ -1790,9 +1790,11 @@
               <div class="modal fade" id="videoIA" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/tecnologias/IA.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#6610f2; color:#fff;">
+                      <h5 class="modal-title" style="color: #fff;">Inteligência Artificial</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761487633/IA_ib6zot.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -1816,9 +1818,11 @@
               <div class="modal fade" id="videoReact" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/tecnologias/React.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#61dafb">
+                      <h5 class="modal-title">React</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761487632/React_vjv7sd.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -1827,7 +1831,7 @@
                   <div class="modal-content">
                     <div class="modal-header" style="background:#61dafb; color:white;">
                       <h5 class="modal-title">React</h5>
-                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
                       <p>
@@ -1842,9 +1846,11 @@
               <div class="modal fade" id="videoAngular" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/tecnologias/Angular.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#a71813; color:#fff;">
+                      <h5 class="modal-title" style="color: #fff;">Angular</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761485220/Angular_jpidjx.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -1868,9 +1874,11 @@
               <div class="modal fade" id="videoStreaming" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/tecnologias/Streaming.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#d81818; color:#fff;">
+                      <h5 class="modal-title" style="color: #fff;">Streaming</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761487631/Streaming_fdloki.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -1894,9 +1902,11 @@
               <div class="modal fade" id="videoMetaIA" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/tecnologias/MetaAI.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#fccfe7;">
+                      <h5 class="modal-title">MetaIA</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761487632/MetaAI_bf9csc.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -1905,7 +1915,7 @@
                   <div class="modal-content">
                     <div class="modal-header" style="background:#fccfe7; color:white;">
                       <h5 class="modal-title">MetaIA</h5>
-                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
                       <p>
@@ -1920,9 +1930,11 @@
               <div class="modal fade" id="videoChatGPT" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/tecnologias/ChatGPT.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#10b981; color:#fff;">
+                      <h5 class="modal-title">ChatGPT</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761485255/ChatGPT_oiu7rg.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -1931,7 +1943,7 @@
                   <div class="modal-content">
                     <div class="modal-header" style="background:#10b981; color:white;">
                       <h5 class="modal-title">ChatGPT</h5>
-                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
                       <p>
@@ -1943,12 +1955,14 @@
               </div>
 
               <!-- DeepSeek -->  
-              <div class="modal fade" id="videoDeepSeek" tabindex="-1" aria-hidden="true">
+             <div class="modal fade" id="videoDeepSeek" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/tecnologias/DeepSeek.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#1B4965; color:#fff;">
+                      <h5 class="modal-title" style="color: #fff;">DeepSeek</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761487665/DeepSeek_b6kga4.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -1972,9 +1986,11 @@
               <div class="modal fade" id="videoAzure" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/tecnologias/azure.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#0078D7;">
+                      <h5 class="modal-title" style="color: #fff;">Microsoft Azure</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761485220/Azure_po6nhj.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -1998,9 +2014,11 @@
               <div class="modal fade" id="videoGemini" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/tecnologias/Gemini.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#C0C0C0;">
+                      <h5 class="modal-title">Gemini</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761487633/Gemini_aiegiw.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -2009,7 +2027,7 @@
                   <div class="modal-content">
                     <div class="modal-header" style="background:#C0C0C0; color:white;">
                       <h5 class="modal-title">Gemini</h5>
-                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
                       <p>
@@ -2024,9 +2042,11 @@
               <div class="modal fade" id="videoAlexa" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/tecnologias/Alexa.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#000;">
+                      <h5 class="modal-title" style="color: #fff;">Alexa</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761485221/Alexa_uppjzm.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -2136,7 +2156,7 @@
                 <div class="flip-card">
                   <div class="flip-card-inner">
                     <div class="flip-card-front" style="background:#34a853;">
-                      <i class="fa-brands fa-google-play fa-3x mb-2" style="color:#fff;"></i>
+                      <img src="assets/img/logos/logoClassroom.png" alt="AutoCAD" style="width:68px;">
                       <h5 style="color:#fff;">Classroom</h5>
                     </div>
                     <div class="flip-card-back" style="background:#2c8c44;">
@@ -2318,9 +2338,11 @@
               <div class="modal fade" id="videoZoom" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/plataformas/Zoom.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#2d8cff; color:#fff;">
+                      <h5 class="modal-title" style="color:#fff;">Zoom</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761481309/Zoom_secm2l.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -2342,9 +2364,11 @@
               <div class="modal fade" id="videoYouTube" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/plataformas/YouTube.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#ff0000; color:#fff;">
+                      <h5 class="modal-title" style="color:#fff;">YouTube</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761481302/YouTube_gbbwed.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -2366,9 +2390,11 @@
               <div class="modal fade" id="videoTikTok" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/plataformas/TikTok.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#010101; color:#fff;">
+                      <h5 class="modal-title" style="color:#fff;">TikTok</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761481296/TikTok_r3shkn.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -2390,9 +2416,11 @@
               <div class="modal fade" id="videoChrome" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/plataformas/Chrome.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#f0923a; color:#fff;">
+                      <h5 class="modal-title" style="color:#fff;">Google Chrome</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761432917/Chrome_ssfjeo.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -2414,9 +2442,11 @@
               <div class="modal fade" id="videoClassroom" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/plataformas/Classroom.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#34a853; color:#fff;">
+                      <h5 class="modal-title" style="color:#fff;">Google Classroom</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761432917/Classroom_wrektm.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -2438,9 +2468,11 @@
               <div class="modal fade" id="videoApple" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/plataformas/Apple.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#a3aaae; color:#000;">
+                      <h5 class="modal-title" style="color:#000;">Apple</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761432919/Apple_ufvxgy.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -2462,9 +2494,11 @@
               <div class="modal fade" id="videoWhatsApp" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/plataformas/Whatsapp.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#25d366; color:#fff;">
+                      <h5 class="modal-title" style="color:#fff;">WhatsApp</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761481280/Whatsapp_eamtaw.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -2483,12 +2517,14 @@
               </div>
 
               <!-- Telegram -->
-              <div class="modal fade" id="videoTelegram" tabindex="-1" aria-hidden="true">
+             <div class="modal fade" id="videoTelegram" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/plataformas/Telegram.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#0088cc; color:#fff;">
+                      <h5 class="modal-title" style="color:#fff;">Telegram</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761481278/Telegram_snapda.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -2510,9 +2546,11 @@
               <div class="modal fade" id="videoAmazon" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/plataformas/Amazon.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#ff9900; color:#000;">
+                      <h5 class="modal-title" style="color:#000;">Amazon</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761432922/Amazon_xsbz6x.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -2534,9 +2572,11 @@
               <div class="modal fade" id="videoMicrosoft" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/plataformas/Microsoft.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#f25022; color:#fff;">
+                      <h5 class="modal-title" style="color:#fff;">Microsoft</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761481280/Microsoft_is9pk0.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -2558,9 +2598,11 @@
               <div class="modal fade" id="videoSamsung" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/plataformas/Samsung.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#c4d2f3; color:#000;">
+                      <h5 class="modal-title">Samsung</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761481278/Samsung_da2pfl.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -2582,9 +2624,11 @@
               <div class="modal fade" id="videoTwitch" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <div class="modal-body p-0">
-                      <video src="assets/videos/plataformas/Twitch.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#6441a5; color:#fff;">
+                      <h5 class="modal-title" style="color:#fff;">Twitch</h5>
+                      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                     </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761481278/Twitch_ys75hj.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -2606,7 +2650,11 @@
               <div class="modal fade" id="videoAndroid" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-md">
                   <div class="modal-content bg-dark">
-                    <video src="assets/videos/plataformas/Android.mov" controls class="w-100"></video>
+                    <div class="modal-header" style="background:#A4C639; color:#000;">
+                      <h5 class="modal-title">Android</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <video src="https://res.cloudinary.com/dk3dah0m9/video/upload/v1761432919/Android_ftpogc.mp4" controls class="w-100"></video>
                   </div>
                 </div>
               </div>
@@ -2682,6 +2730,7 @@
           });
         }
       });
+
     </script>
 
   </body>
